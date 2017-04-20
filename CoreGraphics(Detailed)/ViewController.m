@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CustomView.h"
 
 @interface ViewController ()
 
@@ -14,14 +15,16 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (void)loadView{
+    CustomView *view = [[CustomView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.view = view;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
 }
+
+
 
 @end
