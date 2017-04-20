@@ -256,10 +256,16 @@
 }
 
 - (void)drawPathWithCGContext{
-    //绘制三角形
-    CGContextMoveToPoint(self.currentContext, 100, 100);
-    CGContextAddLineToPoint(self.currentContext, 150, 200);
-    CGContextAddLineToPoint(self.currentContext, 50, 200);
+    //绘制三角形(同下面注释掉的三行)
+    CGPoint points[] = {
+        CGPointMake(100,100),
+        CGPointMake(150,200),
+        CGPointMake(50,200)
+    };
+    CGContextAddLines(self.currentContext, points, 3);
+//    CGContextMoveToPoint(self.currentContext, 100, 100);
+//    CGContextAddLineToPoint(self.currentContext, 150, 200);
+//    CGContextAddLineToPoint(self.currentContext, 50, 200);
     //设置填充颜色
     [[UIColor purpleColor] setFill];
     //设置路径颜色

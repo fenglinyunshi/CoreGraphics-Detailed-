@@ -15,6 +15,7 @@
 		DAC2C7E31EA7A2EF00E173AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC2C7E11EA7A2EF00E173AB /* LaunchScreen.storyboard */; };
 		DAC2C7EE1EA7A2EF00E173AB /* CoreGraphics_Detailed_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC2C7ED1EA7A2EF00E173AB /* CoreGraphics_Detailed_Tests.m */; };
 		DAC2C7F91EA7A2EF00E173AB /* CoreGraphics_Detailed_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC2C7F81EA7A2EF00E173AB /* CoreGraphics_Detailed_UITests.m */; };
+		DAF668561EA8401600B7485B /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF668551EA8401600B7485B /* CustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		DAC2C7F41EA7A2EF00E173AB /* CoreGraphics(Detailed)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreGraphics(Detailed)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC2C7F81EA7A2EF00E173AB /* CoreGraphics_Detailed_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreGraphics_Detailed_UITests.m; sourceTree = "<group>"; };
 		DAC2C7FA1EA7A2EF00E173AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAF668541EA8401600B7485B /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		DAF668551EA8401600B7485B /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		DAC2C7D21EA7A2EF00E173AB /* CoreGraphics(Detailed) */ = {
 			isa = PBXGroup;
 			children = (
+				DAF668541EA8401600B7485B /* CustomView.h */,
+				DAF668551EA8401600B7485B /* CustomView.m */,
 				DAC2C7D61EA7A2EF00E173AB /* AppDelegate.h */,
 				DAC2C7D71EA7A2EF00E173AB /* AppDelegate.m */,
 				DAC2C7D91EA7A2EF00E173AB /* ViewController.h */,
@@ -207,6 +212,7 @@
 				TargetAttributes = {
 					DAC2C7CF1EA7A2EF00E173AB = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 6365DA2KWN;
 					};
 					DAC2C7E81EA7A2EF00E173AB = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -271,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC2C7DB1EA7A2EF00E173AB /* ViewController.m in Sources */,
+				DAF668561EA8401600B7485B /* CustomView.m in Sources */,
 				DAC2C7D81EA7A2EF00E173AB /* AppDelegate.m in Sources */,
 				DAC2C7D51EA7A2EF00E173AB /* main.m in Sources */,
 			);
@@ -411,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6365DA2KWN;
 				INFOPLIST_FILE = "CoreGraphics(Detailed)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dustin.CoreGraphics-Detailed-";
@@ -422,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6365DA2KWN;
 				INFOPLIST_FILE = "CoreGraphics(Detailed)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dustin.CoreGraphics-Detailed-";
@@ -496,6 +505,7 @@
 				DAC2C7FF1EA7A2EF00E173AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAC2C8001EA7A2EF00E173AB /* Build configuration list for PBXNativeTarget "CoreGraphics(Detailed)Tests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +514,7 @@
 				DAC2C8021EA7A2EF00E173AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAC2C8031EA7A2EF00E173AB /* Build configuration list for PBXNativeTarget "CoreGraphics(Detailed)UITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +523,7 @@
 				DAC2C8051EA7A2EF00E173AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
