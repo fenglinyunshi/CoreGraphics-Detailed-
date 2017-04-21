@@ -256,6 +256,12 @@
 }
 
 - (void)drawPathWithCGContext{
+    //保存添加阴影效果之前的绘画状态
+    CGContextSaveGState(self.currentContext);
+    //设置阴影的偏移量和模糊指数以及颜色（可以使用默认颜色，也可以使用自己定义的颜色）
+    CGContextSetShadow(self.currentContext, CGSizeMake(5, 10), 3);
+    //CGContextSetShadowWithColor(self.currentContext, CGSizeMake(5, 10), 5, [UIColor cyanColor].CGColor);
+    
     //绘制三角形(同下面注释掉的三行)
     CGPoint points[] = {
         CGPointMake(100,100),
@@ -298,6 +304,9 @@
     CGContextClosePath(self.currentContext);
     CGContextDrawPath(self.currentContext,kCGPathFillStroke);
     
+    //恢复没有阴影效果的状态
+    CGContextRestoreGState(self.currentContext);
+    
     //绘制三次贝塞尔曲线
     CGContextMoveToPoint(self.currentContext, 200, 300);
     /*参数1：上下文
@@ -327,6 +336,71 @@
     [[UIColor redColor] setStroke];
     //    CGContextClosePath(self.currentContext);
     CGContextDrawPath(self.currentContext,kCGPathStroke);
+    
+    /*
+     *渐变
+     */
+    //保存渐变之前的绘画状态
+    CGContextSaveGState(self.currentContext);
+    
+    //绘制渐变剪切路径
+    UIBezierPath *path1 = [[UIBezierPath alloc] init];
+    [path1 moveToPoint:CGPointMake(100, 450)];
+    [path1 addLineToPoint:CGPointMake(250, 450)];
+    [path1 addLineToPoint:CGPointMake(250, 650)];
+    [path1 addLineToPoint:CGPointMake(100, 650)];
+    [path1 closePath];
+    //是用剪切路径剪裁图形上下文
+    [path1 addClip];
+    
+    //绘制渐变
+    CGFloat locations[4] = {0.0,0.4,0.7,1.0};//三个颜色节点
+    CGFloat components[16] = {1.0,0.3,0.0,1.0,//起始颜色
+                              0.2,0.8,0.2,1.0,//中间颜色
+                              1.0,1.0,0.5,1.0,//中间颜色
+                              0.8,0.3,0.4,1.0};//终止颜色
+    //创建RGB色彩空间对象
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 4);
+    
+    //渐变的起点(渐变效果在以起点和终点为轴的直线周边)
+//    CGPoint startPoint = CGPointMake(100, 450);
+    //渐变的终点
+//    CGPoint endPoint =    CGPointMake(250, 650);
+    /*线性渐变
+     *参数1:当前上下文
+     *参数2:渐变指针
+     *参数3，4:渐变的起始和终止位置
+     *参数5:CGGradientDrawingOptions枚举
+     typedef CF_OPTIONS (uint32_t, CGGradientDrawingOptions) {
+     kCGGradientDrawsBeforeStartLocation = (1 << 0),//扩展整个渐变到渐变的起点之前的所有点
+     kCGGradientDrawsAfterEndLocation = (1 << 1)//扩展整个渐变到渐变的终点之后的所有点
+     };
+     0表示既不往前扩展也不往后扩展
+     */
+//    CGContextDrawLinearGradient(self.currentContext, gradient, startPoint, endPoint, kCGGradientDrawsBeforeStartLocation|kCGGradientDrawsAfterEndLocation);
+    
+    /*径向渐变
+     *参数1:当前上下文
+     *参数2:渐变指针
+     *参数3:渐变的起始圆心
+     *参数4：渐变的起始半径
+     *参数5：渐变的终止圆心
+     *参数6：渐变的终止半径
+     *参数5:CGGradientDrawingOptions枚举
+     typedef CF_OPTIONS (uint32_t, CGGradientDrawingOptions) {
+     kCGGradientDrawsBeforeStartLocation = (1 << 0),//扩展整个渐变到渐变的起点之前的所有点
+     kCGGradientDrawsAfterEndLocation = (1 << 1)//扩展整个渐变到渐变的终点之后的所有点
+     };
+     0表示既不往前扩展也不往后扩展
+     */
+    CGContextDrawRadialGradient(self.currentContext, gradient, CGPointMake(175, 550), 20, CGPointMake(175, 580), 60, 0);
+    
+    //释放创建的C结构对象
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorSpace);
+    //恢复绘画状态
+    CGContextRestoreGState(self.currentContext);
 }
 
 
