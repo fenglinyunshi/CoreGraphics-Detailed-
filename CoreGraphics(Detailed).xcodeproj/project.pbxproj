@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DAC11FE31EA99D5C008D8CF1 /* 图1-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC11FE11EA99D5C008D8CF1 /* 图1-2.png */; };
+		DAC11FE41EA99D5C008D8CF1 /* 图1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC11FE21EA99D5C008D8CF1 /* 图1-1.png */; };
 		DAC2C7D51EA7A2EF00E173AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC2C7D41EA7A2EF00E173AB /* main.m */; };
 		DAC2C7D81EA7A2EF00E173AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC2C7D71EA7A2EF00E173AB /* AppDelegate.m */; };
 		DAC2C7DB1EA7A2EF00E173AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC2C7DA1EA7A2EF00E173AB /* ViewController.m */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DAC11FE11EA99D5C008D8CF1 /* 图1-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "图1-2.png"; sourceTree = "<group>"; };
+		DAC11FE21EA99D5C008D8CF1 /* 图1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "图1-1.png"; sourceTree = "<group>"; };
 		DAC2C7D01EA7A2EF00E173AB /* CoreGraphics(Detailed).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreGraphics(Detailed).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC2C7D41EA7A2EF00E173AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DAC2C7D61EA7A2EF00E173AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		DAC2C7D31EA7A2EF00E173AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DAC11FE11EA99D5C008D8CF1 /* 图1-2.png */,
+				DAC11FE21EA99D5C008D8CF1 /* 图1-1.png */,
 				DAC2C7D41EA7A2EF00E173AB /* main.m */,
 			);
 			name = "Supporting Files";
@@ -250,7 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC2C7E31EA7A2EF00E173AB /* LaunchScreen.storyboard in Resources */,
+				DAC11FE31EA99D5C008D8CF1 /* 图1-2.png in Resources */,
 				DAC2C7E01EA7A2EF00E173AB /* Assets.xcassets in Resources */,
+				DAC11FE41EA99D5C008D8CF1 /* 图1-1.png in Resources */,
 				DAC2C7DE1EA7A2EF00E173AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
